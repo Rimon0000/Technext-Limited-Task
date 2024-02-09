@@ -4,6 +4,10 @@
  
 @layer base {
   :root {
+    --custom-image-color: #26235C;
+    --custom-ellipse-color: #F7DF1E;
+    
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -72,5 +76,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+  .image-border-color{
+    border-color: var(--custom-image-color);
+  }
+  .text-color{
+    color: var(--custom-image-color);
+  }
+  .image-ellipse-color{
+    border-color: var(--custom-ellipse-color);
   }
 }
