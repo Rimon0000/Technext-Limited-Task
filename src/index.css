@@ -6,6 +6,9 @@
   :root {
     --custom-image-color: #26235C;
     --custom-ellipse-color: #F7DF1E;
+    --custom-footer-color: #171611;
+    --custom-footer-text: #E2E8F0;
+    
     
 
     --background: 0 0% 100%;
@@ -89,5 +92,11 @@
   }
   .image-ellipse-color{
     border-color: var(--custom-ellipse-color);
+  }
+  .bg-footer {
+    background-color: var(--custom-footer-color);
+  }
+  .text-footer {
+    color: var(--custom-footer-text);
   }
 }

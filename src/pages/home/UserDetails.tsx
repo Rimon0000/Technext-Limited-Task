@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const UserDetails = () => {
   const user = useLoaderData();
@@ -23,7 +23,7 @@ const UserDetails = () => {
   } = user;
 
   return (
-    <Container className="my-16 grid place-content-center">
+    <Container className="my-12 grid place-content-center lg:px-24">
       <div className=" bg-slate-50 shadow-md rounded-lg  border-2 grid grid-cols-1 md:grid-cools-2 lg:grid-cols-2 p-5">
         <div>
           <img className="max-h-[300px] max-w-[300px]" src={image} alt="" />
@@ -114,6 +114,9 @@ const UserDetails = () => {
           </div>
         </div>
       </div>
+      <Link to="/" className="my-5 text-center">
+        <Button>Back to Home</Button>
+      </Link>
     </Container>
   );
 };
