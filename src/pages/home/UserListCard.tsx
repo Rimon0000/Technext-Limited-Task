@@ -1,8 +1,9 @@
+import { TUser } from "@/components/types/type";
 import { Button } from "@/components/ui/button";
 import { MailOpen, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const UserListCard = ({ user }) => {
+const UserListCard = ({ user }: { user: TUser }) => {
   const { id, image, firstName, lastName, email, address, company } = user;
 
   return (

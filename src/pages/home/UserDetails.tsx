@@ -1,9 +1,10 @@
 import Container from "@/components/Container";
+import { TUser } from "@/components/types/type";
 import { Button } from "@/components/ui/button";
 import { Link, useLoaderData } from "react-router-dom";
 
 const UserDetails = () => {
-  const user = useLoaderData();
+  const user = useLoaderData() as TUser;
   const {
     image,
     firstName,
