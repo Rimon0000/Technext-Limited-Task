@@ -3,7 +3,7 @@ import { MailOpen, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const UserListCard = ({ user }) => {
-  const { image, firstName, lastName, email, address, company } = user;
+  const { id, image, firstName, lastName, email, address, company } = user;
 
   return (
     <div className="bg-slate-50 shadow-md rounded-lg  border-2 text-center grid place-content-center p-5">
@@ -14,20 +14,18 @@ const UserListCard = ({ user }) => {
           alt=""
         />
       </div>
-      <Link to="">
+      <Link to={`/${id}`}>
         <Button className="font-bold text-2xl bg-slate-50" variant="outline">
           {firstName} {lastName}
         </Button>
       </Link>
-      <p className="font-semibold text-center pt-1 text-color">
-        {company?.name}
-      </p>
-      <Button className="my-4 text-color text-white flex place-content-center gap-3">
+      <p className=" text-center pt-1 text-color">{company?.name}</p>
+      <Button className="my-5 text-color text-white flex place-content-center gap-3 bg-slate-600">
         <MailOpen className="w-5 h-5"></MailOpen>
         {email}
       </Button>
       <div className="flex mx-auto gap-2 font-semibold">
-        <MapPin></MapPin> 
+        <MapPin></MapPin>
         <div>
           <p className="text-color">{address.address}</p>
           <p className="text-color">
