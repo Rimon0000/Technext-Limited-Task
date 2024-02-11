@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { TSortOptions, TUser } from "@/components/types/type";
 
+
 const UserList = () => {
     const [users, setUsers] = useState<TUser[]>([]);
     const [sortBy, setSortBy] = useState<keyof TSortOptions | null>(null);
