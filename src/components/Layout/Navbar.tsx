@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Button } from "../ui/button";
 
 const Navbar = () =>{
     return (
@@ -7,7 +8,7 @@ const Navbar = () =>{
                 <h1 className="text-3xl font-semibold">Technext Limited</h1>
                 <ul className="space-x-5 text-base">
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/">About</NavLink>
+                    <NavLink to="/add-user"><Button  variant="link">Add User</Button></NavLink>
                 </ul>
             </nav>
         </header>

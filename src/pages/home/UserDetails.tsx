@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import Container from "@/components/Container";
 import { TUser } from "@/components/types/type";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ const UserDetails = () => {
     height,
     weight,
     domain,
-  } = user;
+  } = user?.user;
 
   return (
     <Container className="my-12 grid place-content-center lg:px-24">
@@ -52,7 +53,7 @@ const UserDetails = () => {
               <p className="font-semibold text-color pb-1">
                 Blood group <span className="px-2">/</span>
                 <span className="text-base font-normal text-slate-600">
-                  {bloodGroup} {address?.state}
+                  {bloodGroup}
                 </span>
               </p>
               <p className="font-semibold text-color pb-1">
@@ -96,13 +97,13 @@ const UserDetails = () => {
               <p className="font-semibold text-color pb-1">
                 Company <span className="px-2">/</span>
                 <span className="text-base font-normal text-slate-600">
-                  {company.name}
+                  {company?.name}
                 </span>
               </p>
               <p className="font-semibold text-color pb-1">
                 Department <span className="px-2">/</span>
                 <span className="text-base font-normal text-slate-600">
-                  {company.department}
+                  {company?.department}
                 </span>
               </p>
               <p className="font-semibold text-color pb-1">

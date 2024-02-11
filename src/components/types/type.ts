@@ -1,5 +1,6 @@
 // type for the user object
 export type TUser = {
+  user: { image: any; firstName: any; lastName: any; email: any; address: any; company: any; phone: any; university: any; age: any; gender: any; birthDate: any; bloodGroup: any; height: any; weight: any; domain: any; };
   id: number;
   firstName: string;
   lastName: string;

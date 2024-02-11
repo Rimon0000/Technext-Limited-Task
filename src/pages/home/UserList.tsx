@@ -11,21 +11,20 @@ const UserList = () => {
     const [search, setSearch] = useState("")
 
     useEffect(() => {
-        fetch("https://dummyjson.com/users")
+        fetch("http://localhost:5000/https://dummyjson.com/users")
             .then(res => res.json())
             .then(data => {
-                setUsers(data.users);
+                setUsers(data.user);
             });
     }, []);
 
-
     //handle search
-    const handleSearch = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value);
     }
 
     //for search
-    const filteredUsers = users.filter(user =>
+    const filteredUsers = users?.filter(user =>
         user.firstName.toLowerCase().includes(search.toLowerCase()) ||
         user.lastName.toLowerCase().includes(search.toLowerCase())
     );
@@ -33,8 +32,7 @@ const UserList = () => {
 
     //handle onchange for sorting
     const handleSortByChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const selectedValue = e.target.value as keyof TSortOptions;
-      setSortBy(selectedValue || null);
+        setSortBy(e.target.value as keyof TSortOptions);
   };
 
   //sorting
