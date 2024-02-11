@@ -8,6 +8,7 @@ import { TSortOptions, TUser } from "@/components/types/type";
 const UserList = () => {
     const [users, setUsers] = useState<TUser[]>([]);
     const [sortBy, setSortBy] = useState<keyof TSortOptions | null>(null);
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         fetch("https://dummyjson.com/users")
@@ -18,14 +19,26 @@ const UserList = () => {
     }, []);
 
 
-    //handle onchange 
+    //handle search
+    const handleSearch = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSearch(e.target.value);
+    }
+
+    //for search
+    const filteredUsers = users.filter(user =>
+        user.firstName.toLowerCase().includes(search.toLowerCase()) ||
+        user.lastName.toLowerCase().includes(search.toLowerCase())
+    );
+
+
+    //handle onchange for sorting
     const handleSortByChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const selectedValue = e.target.value as keyof TSortOptions;
       setSortBy(selectedValue || null);
   };
 
   //sorting
-    const sortedUsers = [...users].sort((a, b) => {
+    const sortedUsers = [...filteredUsers].sort((a, b) => {
         if (sortBy === 'firstName') {
             return a.firstName.localeCompare(b.firstName);
         } 
@@ -44,7 +57,7 @@ const UserList = () => {
         <Container className="my-10">
             <div className="my-10 flex gap-28 place-content-center">
                 <div className="flex w-full max-w-sm items-center space-x-2">
-                    <Input type="text" placeholder="Search" />
+                    <Input onChange={handleSearch} value={search} type="text" placeholder="Search" />
                     <Button type="submit">Search</Button>
                 </div>
                 <div>
