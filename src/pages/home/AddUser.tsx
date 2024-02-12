@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import Swal from "sweetalert2";
@@ -5,7 +6,7 @@ import Swal from "sweetalert2";
 const AddUser = () => {
 
     //handle new user
-    const handleAddNewUser = async(e) =>{
+    const handleAddNewUser = async(e: any) =>{
     e.preventDefault();
 
     const form = e.target;
