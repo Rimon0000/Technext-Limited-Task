@@ -18,7 +18,7 @@ import AddUser from "@/pages/home/AddUser";
         {
           path: "/:id",
           element: <UserDetails></UserDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/https://dummyjson.com/users/${params.id}`)
+          loader: ({params}) => fetch(`https://technext-backend-beta.vercel.app/users/${params.id}`)
         },
         {
           path: "add-user",

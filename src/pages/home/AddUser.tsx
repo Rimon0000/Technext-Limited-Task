@@ -35,7 +35,7 @@ const AddUser = () => {
     }
 
     //send data to the server 
-    fetch('http://localhost:5000/https://dummyjson.com/users',{
+    fetch('https://technext-backend-beta.vercel.app/users',{
         method: 'POST',
         headers:{
             'content-type': 'application/json'

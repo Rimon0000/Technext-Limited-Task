@@ -11,7 +11,7 @@ const UserList = () => {
     const [search, setSearch] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:5000/https://dummyjson.com/users")
+        fetch("https://technext-backend-beta.vercel.app/users")
             .then(res => res.json())
             .then(data => {
                 setUsers(data.user);
